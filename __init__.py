@@ -1,0 +1,63 @@
+# Copyright (c) 2020, Oracle and/or its affiliates.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License, version 2.0,
+# as published by the Free Software Foundation.
+#
+# This program is also distributed with certain software (including
+# but not limited to OpenSSL) that is licensed under separate terms, as
+# designated in a particular file or component or in included license
+# documentation.  The authors of MySQL hereby grant you an additional
+# permission to link the program and your derivative works with the
+# separately licensed software that they have included with MySQL.
+# This program is distributed in the hope that it will be useful,  but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See
+# the GNU General Public License, version 2.0, for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+
+class Error(Exception):
+    def __init__(self, code, msg):
+        self.code = code
+        self.msg = msg
+        self.args = (code, msg)
+
+    def __str__(self):
+        msg = ""
+        if self.code > 0 and self.code < 50000:
+            msg = "MySQL Error (%s): " % self.code
+        elif self.code > 0:
+            msg = "Shell Error (%s): " % self.code
+
+        msg += self.msg
+
+        return msg
+
+class DBError(Error):
+    def __init__(self, code, msg, sqlstate=None):
+        super().__init__(code, msg)
+        self.sqlstate = sqlstate
+
+
+class ShellGlobals(object):
+    def __setattr__(self, name, value):
+        self.__dict__[name] = value
+
+    def __delattr__(self, name):
+        del self.__dict__[name]
+
+    def __getattr__(self, name):
+        # backwards compatibility
+        if name == "mysql":
+            return mysql
+        elif name == "mysqlx":
+            return mysqlx
+        return self.__dict__[name]
+
+
+globals = ShellGlobals()
+
+del ShellGlobals
