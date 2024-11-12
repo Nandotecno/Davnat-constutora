@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to left, #103FA3, #2F6CFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#main-content {
+    width: 55vh;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+
+form {
+    padding: 20px;
+}
+
+.div-input {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    width: 96%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    background-color: #F3A006;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff8800;
+}
+
+h2 {
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 25px;
+    font-size: 24pt;
+}
+
+.titulo {
+    width: 100%;
+    text-align: center;
+    color: #cf2e2e;
+    text-decoration: underline;
+}
+
+.botao-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #F3A006;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+
+}
+
+.botao-flutuante a {
+    text-decoration: none;
+    color: black;
+}
+
+.botao-flutuante:hover {
+    background-color: #ff8800;
+}
+
+.modalContent {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    background-color: white;
+    max-width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    box-shadow: 5px 5px 6px 4px #000;
+    border-radius: 10px;
+    position: relative;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.mostrar .content {
+    animation: modal .5s;
+}
+
+.modalContent.mostrar {
+    display: flex;
+}
+
+.user-info {
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    background-color: #a2baf0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0px;
+}
+
+.user-info a {
+    margin: 6px;
+    margin-right: 0px;
+}

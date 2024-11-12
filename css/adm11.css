@@ -1,0 +1,153 @@
+html{
+    background: linear-gradient(to left, #103FA3, #2F6CFF);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to left, #103FA3, #2F6CFF);
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header{
+    height: 15vh;
+}
+
+footer{
+    height: 25vh;
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+span{
+    cursor: pointer;
+}
+
+.display-container {
+    margin-left: 5svh;
+    justify-content: center;
+    display: inline-flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    width: 95%; 
+}
+
+.comment-container {
+    background-color: #e2dada;
+    border-radius: 8px;
+    padding: 20px;
+    min-width: 55   vh;
+    width: auto; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.email {
+    color: #555;
+}
+
+.comment-text p {
+    margin: 5px 0;
+}
+
+
+.botao-flutuante a {
+    color: black;
+    text-decoration: none;
+}
+
+.botao-flutuante {
+    position: fixed;
+    z-index: 1000;
+    bottom: 20px;
+    right: 20px;
+    background-color: #F3A006;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.botao-flutuante:hover {
+    background-color: #ff8800;
+}
+
+.panel{
+    display: flex;
+    align-items: center;
+    width: 96%;
+    margin-bottom: 40px;
+}
+
+.checks{
+    display: flex;
+}
+
+.checks span{
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.ordenar{
+    margin-left: 92vh;
+    display: flex;
+    gap: 20px;
+}
+
+select{
+    margin-left: 4vh;
+}
+
+.data{
+    margin: 4vh;
+}
+
+.user-info{
+    position: absolute;
+    text-align: center;
+    z-index: 1000;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    background-color: #a2baf0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0px;
+}
+
+.user-info a{
+    margin: 6px;
+    margin-right: 0px;
+}
+
+h2{
+    text-align: center;
+    width: 100%;
+}
+
+.erro{
+    text-align: center;
+}
+
+hr{
+    margin-bottom: 10vh;
+}

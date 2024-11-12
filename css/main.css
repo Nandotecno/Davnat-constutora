@@ -1,0 +1,224 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to left, #103FA3, #2F6CFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    overflow: auto;
+}
+
+#main-content {
+    width: 60vh;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+form {
+    margin-left: 10%;
+    padding: 20px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.div-atrasoTxt {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.div-atrasoTxt.show {
+    opacity: 1;
+    margin-bottom: 20px;
+    transform: translateY(0);
+}
+
+.div-input {
+    margin-bottom: 20px;
+}
+
+.div-input-radio label{
+    width: 100%;
+    font-size: 12pt
+}
+
+.div-input-radio {
+    font-size: 10pt;
+    display: flex;
+    color: #333333;
+    flex-wrap: wrap;
+}
+.div-input-radio input{
+    width: 2vh;
+    margin-bottom: 5%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+textarea{
+    min-width: 365px;
+    max-width: 365px;
+    min-height: 30px;
+    max-height: 100px;
+}
+
+input,
+textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-envia {
+    width: 100%;
+    padding: 10px;
+    background-color: #F3A006;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-envia:hover {
+    background-color: #ff8800;
+}
+
+h2{
+    margin-top: 10px;
+}
+
+.titulo,
+h2{
+    width: 100%;
+    text-align: center;
+}
+
+.titulo{
+    color: #cf2e2e;
+    text-decoration: underline;
+}
+
+.warn{
+    text-align: center;
+    font-size: 10pt;
+    margin: 0;
+    margin-top: 15px;
+
+}
+
+a{
+    margin: 6px;
+    margin-right: 0px;
+}
+
+.user-info{
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    background-color: #a2baf0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0px;
+}
+
+h4{
+    text-align: center;
+}
+
+.modalContent{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0 ;
+    left: 0;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    background-color: white;
+    max-width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    box-shadow: 5px 5px 6px 4px #000;
+    border-radius: 10px;
+    position: relative;
+  }
+  @keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0,-60px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+  }
+  .mostrar .content {
+    animation: modal .5s;
+  }
+  .modalContent.mostrar {
+    display: flex;
+  }
+  .fechar {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 0;
+    background-color: white;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  #requisicoesContainer{
+    width: 30%;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+    margin: 10%;
+    padding-bottom: 2.5%;
+    overflow: auto;
+  }
+
+  .divAgend{
+    border-radius: 4px;
+    margin-top: 10%;
+    font-size: 10pt;
+    width: 50vh;
+    border: solid 1px;
+    
+  }
+
+  .ajuda {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 50px; 
+    height: 50px; 
+    
+}
