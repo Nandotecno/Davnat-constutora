@@ -1,0 +1,29 @@
+def soma_valor_total_carros(valor_total_carros_vendidos):
+    valor_total_carros_vendidos = float(input(f'Digite o valor do carro: '))
+    return valor_total_carros_vendidos
+
+salario_fixo = float(input('Digite o salario do funcionacio: '))
+
+comissao_fixa_por_carro = float(input('Digite a comissão fixa do funcionacio por carro vendido: '))
+
+total_de_carros_vendidos = int(input('Digite a quantidade total de carros vendidos pelo funcionario: '))
+
+
+total = 0
+valor_total_carros_vendidos = 0
+contagem = 0
+while contagem < total_de_carros_vendidos:
+    total = soma_valor_total_carros(valor_total_carros_vendidos)
+    valor_total_carros_vendidos += total
+    contagem +=1
+
+print(f'O valor total de carros vendidos pelo funcionário foi de R${valor_total_carros_vendidos:.2f}')
+
+total_comissao_fixa = comissao_fixa_por_carro * total_de_carros_vendidos
+print(f'O valor total da comissão fixa para o funcionário é de R${total_comissao_fixa}')
+
+percentual_sobre_total_vendas = (valor_total_carros_vendidos * 5)/100
+print(f'O valor da comissão sobre o valor total de vendas é de R${percentual_sobre_total_vendas}')
+
+salario_sencibilizado = salario_fixo + total_comissao_fixa + percentual_sobre_total_vendas
+print(f'Este mês o salário a receber é de: R${salario_sencibilizado:.2f}')
